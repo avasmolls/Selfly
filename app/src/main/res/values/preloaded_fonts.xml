@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/bangers</item>
+        <item>@font/barriecito</item>
+        <item>@font/cherry_cream_soda</item>
+        <item>@font/gidugu</item>
+        <item>@font/monofett</item>
+    </array>
+</resources>
