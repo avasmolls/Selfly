@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.selfly.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_chooseTipFragment"
+            app:destination="@id/chooseTipFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moodTrackerFragment"
+            app:destination="@id/moodTrackerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_calmingDownFragment"
+            app:destination="@id/calmingDownFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chooseJournalFragment"
+            app:destination="@id/chooseJournalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseTipFragment"
+        android:name="com.example.selfly.ChooseTipFragment"
+        android:label="fragment_choose_tip"
+        tools:layout="@layout/fragment_choose_tip" />
+    <fragment
+        android:id="@+id/calmingDownFragment"
+        android:name="com.example.selfly.CalmingDownFragment"
+        android:label="fragment_calming_down"
+        tools:layout="@layout/fragment_calming_down" />
+    <fragment
+        android:id="@+id/chooseJournalFragment"
+        android:name="com.example.selfly.ChooseJournalFragment"
+        android:label="fragment_choose_journal"
+        tools:layout="@layout/fragment_choose_journal" />
+    <fragment
+        android:id="@+id/moodTrackerFragment"
+        android:name="com.example.selfly.MoodTrackerFragment"
+        android:label="fragment_mood_tracker"
+        tools:layout="@layout/fragment_mood_tracker" />
+</navigation>

@@ -9,7 +9,7 @@
     tools:context=".MainFragment">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/calm_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -18,11 +18,11 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintEnd_toStartOf="@+id/calm_vector"
+        app:layout_constraintTop_toTopOf="@+id/calm_vector" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/mood_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -31,11 +31,11 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintEnd_toStartOf="@+id/mood_vector"
+        app:layout_constraintTop_toTopOf="@+id/mood_vector" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tips_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -44,24 +44,24 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3" />
+        app:layout_constraintStart_toEndOf="@+id/tips_vector"
+        app:layout_constraintTop_toTopOf="@+id/tips_vector" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/monofett"
         android:text="selfly."
         android:textColor="@color/green_dark"
-        android:textSize="48sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/journal_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -70,10 +70,10 @@
         android:src="@drawable/ic_book"
         android:tint="@color/green_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/subtitle" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/journal_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -82,41 +82,41 @@
         android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintStart_toEndOf="@+id/journal_vector"
+        app:layout_constraintTop_toTopOf="@+id/journal_vector" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/mood_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_tag_faces_24"
         android:tint="@color/green_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/journal_vector" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/tips_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:src="@drawable/ic_baseline_thumb_up_alt_24"
         android:tint="@color/green_dark"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@+id/mood_vector" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/calm_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_nights_stay_24"
         android:tint="@color/green_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tips_vector" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -127,10 +127,10 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/journal_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -140,11 +140,11 @@
         android:textColor="@color/green_medium"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/journal_vector"
+        app:layout_constraintTop_toBottomOf="@+id/journal_title" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/mood_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -154,11 +154,11 @@
         android:textColor="@color/green_medium"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintEnd_toStartOf="@+id/mood_vector"
+        app:layout_constraintTop_toBottomOf="@+id/mood_title" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/tips_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -168,11 +168,11 @@
         android:textColor="@color/green_medium"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintStart_toEndOf="@+id/tips_vector"
+        app:layout_constraintTop_toBottomOf="@+id/tips_title" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/calm_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -182,7 +182,7 @@
         android:textColor="@color/green_medium"
         android:textSize="20sp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintEnd_toStartOf="@+id/calm_vector"
+        app:layout_constraintTop_toBottomOf="@+id/calm_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
