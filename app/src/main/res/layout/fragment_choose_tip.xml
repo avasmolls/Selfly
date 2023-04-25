@@ -5,17 +5,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_light"
-    tools:context=".ChooseTipFragment">
+    android:padding="10dp"
+    tools:context=".ChooseTipFragment"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/tips_title_screen"
-        android:layout_width="0dp"
+        android:layout_width="392dp"
         android:layout_height="wrap_content"
-        android:text="TIPS TIPS TIPS"
         android:gravity="center"
+        android:text="TIPS      TIPS      TIPS"
+        android:textColor="@color/green_medium"
         android:textSize="30dp"
         android:textStyle="italic"
+        app:fontFamily="@font/cherry_cream_soda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="what do you need a tip for?"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tips_title_screen" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="anxiety"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:backgroundTint="@color/green_light_extra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="sleep"
+        android:textSize="20dp"
+        android:backgroundTint="@color/green_light_2"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="self love"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
+        android:backgroundTint="@color/green_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="self care"
+        android:textSize="20dp"
+        android:backgroundTint="@color/green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
