@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_light"
+    android:background="@drawable/background"
     android:padding="5dp"
-    tools:context=".MainFragment">
+    tools:context=".MainFragment"
+    >
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/monofett"
+        android:text="selfly."
+        android:textColor="@color/green_light"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/calm_title"
@@ -54,23 +68,11 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/monofett"
         android:text="selfly."
-        android:textColor="@color/green_dark"
+        android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/journal_vector"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:background="#00FFFFFF"
-        android:src="@drawable/ic_book"
-        android:tint="@color/green_dark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subtitle" />
 
     <TextView
         android:id="@+id/journal_title"
@@ -86,43 +88,96 @@
         app:layout_constraintTop_toTopOf="@+id/journal_vector" />
 
     <ImageView
+        android:id="@+id/journal_vector2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_book"
+        app:layout_constraintBottom_toTopOf="@+id/mood_vector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        app:tint="@color/green_light" />
+
+    <ImageView
+        android:id="@+id/journal_vector"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_book"
+        app:layout_constraintBottom_toTopOf="@+id/mood_vector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/mood_vector2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_baseline_tag_faces_24"
+        app:layout_constraintBottom_toTopOf="@+id/tips_vector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/journal_vector"
+        app:tint="@color/green_light" />
+
+    <ImageView
         android:id="@+id/mood_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_tag_faces_24"
-        android:tint="@color/green_dark"
+        app:layout_constraintBottom_toTopOf="@+id/tips_vector"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/journal_vector" />
+        app:layout_constraintTop_toBottomOf="@+id/journal_vector"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/tips_vector2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_baseline_thumb_up_alt_24"
+        app:layout_constraintBottom_toTopOf="@+id/calm_vector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mood_vector"
+        app:tint="@color/green_light" />
 
     <ImageView
         android:id="@+id/tips_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
         android:src="@drawable/ic_baseline_thumb_up_alt_24"
-        android:tint="@color/green_dark"
+        app:layout_constraintBottom_toTopOf="@+id/calm_vector"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mood_vector" />
+        app:layout_constraintTop_toBottomOf="@+id/mood_vector"
+        app:tint="@color/white" />
+
+    <ImageView
+        android:id="@+id/calm_vector2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_baseline_nights_stay_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tips_vector"
+        app:tint="@color/green_light" />
 
     <ImageView
         android:id="@+id/calm_vector"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/ic_baseline_nights_stay_24"
-        android:tint="@color/green_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tips_vector" />
+        app:layout_constraintTop_toBottomOf="@+id/tips_vector"
+        app:tint="@color/white" />
 
     <TextView
         android:id="@+id/subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/cherry_cream_soda"
         android:text="take some time for you."
-        android:textColor="@color/green_medium"
+        android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,12 +189,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="write it all down"
-        android:textColor="@color/green_medium"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/journal_vector"
         app:layout_constraintTop_toBottomOf="@+id/journal_title" />
 
@@ -147,13 +201,12 @@
         android:id="@+id/mood_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="how are you doing?"
-        android:textColor="@color/green_medium"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/mood_vector"
         app:layout_constraintTop_toBottomOf="@+id/mood_title" />
 
@@ -162,12 +215,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="treat yourself today "
-        android:textColor="@color/green_medium"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tips_vector"
         app:layout_constraintTop_toBottomOf="@+id/tips_title" />
 
@@ -175,13 +227,12 @@
         android:id="@+id/calm_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="take time to relax"
-        android:textColor="@color/green_medium"
+        android:textColor="@color/green_dark"
         android:textSize="20sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/calm_vector"
         app:layout_constraintTop_toBottomOf="@+id/calm_title" />
 
