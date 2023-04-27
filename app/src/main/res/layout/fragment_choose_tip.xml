@@ -4,15 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/green_light"
+    android:background="@drawable/background"
     android:padding="10dp"
     tools:context=".ChooseTipFragment"
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
+        android:id="@+id/tips_title_screen2"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="TIPS      TIPS      TIPS"
+        android:textColor="@color/green_light_extra"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        app:fontFamily="@font/cherry_cream_soda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tips_title_screen"
         android:layout_width="392dp"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TIPS      TIPS      TIPS"
+        android:textColor="@color/green_dark"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        app:fontFamily="@font/cherry_cream_soda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tips_title_screen3"
+        android:layout_width="392dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="TIPS      TIPS      TIPS"
         android:textColor="@color/green_medium"

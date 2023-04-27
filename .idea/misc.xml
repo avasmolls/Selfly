@@ -8,10 +8,11 @@
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_calming_down.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_choose_journal.xml" value="0.27291666666666664" />
-        <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_choose_tip.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_choose_tip.xml" value="0.25" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_firebase.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_main.xml" value="0.33" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/fragment_mood_tracker.xml" value="0.25885416666666666" />
+        <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/list_item_layout_journal.xml" value="0.1" />
       </map>
     </option>
   </component>
