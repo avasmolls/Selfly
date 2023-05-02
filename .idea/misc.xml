@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/drawable/ic_baseline_sentiment_satisfied_alt_24.xml" value="0.205" />
+        <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/drawable/ic_baseline_tag_faces_24.xml" value="0.205" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/drawable/ic_baseline_thumb_up_alt_24.xml" value="0.2775" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/drawable/ic_book.xml" value="0.1695" />
         <entry key="..\:/Users/smolleya24/AndroidStudioProjects/Selfly/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
