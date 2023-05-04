@@ -19,10 +19,10 @@ class MoodTrackerFragment : Fragment() {
         _binding = FragmentMoodTrackerBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        val tempMoods = listOf(Mood("happy", R.drawable.ic_baseline_sentiment_satisfied_alt_24),
-        Mood("sad", R.drawable.ic_baseline_sentiment_dissatisfied_24),
-        Mood("very happy",R.drawable.ic_baseline_tag_faces_24),
-        Mood("calm", R.drawable.ic_baseline_sentiment_satisfied_24))
+        val tempMoods = listOf(Mood("happy", R.drawable.ic_baseline_sentiment_satisfied_alt_24, 3, 4, 2023),
+        Mood("sad", R.drawable.ic_baseline_sentiment_dissatisfied_24, 4, 5, 2023),
+        Mood("very happy",R.drawable.ic_baseline_tag_faces_24, 5, 2, 2023),
+        Mood("calm", R.drawable.ic_baseline_sentiment_satisfied_24, 5, 3, 2023))
 
         val myAdapter = MoodAdapter(tempMoods)
         binding.recyclerViewMood.adapter = myAdapter

@@ -8,6 +8,19 @@
     android:padding="8dp">
 
     <TextView
+        android:id="@+id/date_text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="00/00/00"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:fontFamily="@font/gidugu"
+        app:layout_constraintBaseline_toBaselineOf="@+id/text_view_mood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/text_view_mood" />
+
+    <TextView
         android:id="@+id/text_view_mood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +52,7 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toStartOf="@+id/text_view_mood"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_tag_faces_24"
         app:tint="@color/white" />
