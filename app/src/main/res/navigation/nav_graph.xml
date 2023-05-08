@@ -37,10 +37,19 @@
         android:id="@+id/chooseJournalFragment"
         android:name="com.example.selfly.ChooseJournalFragment"
         android:label="fragment_choose_journal"
-        tools:layout="@layout/fragment_choose_journal" />
+        tools:layout="@layout/fragment_choose_journal" >
+        <action
+            android:id="@+id/action_chooseJournalFragment_to_journalWritingFragment"
+            app:destination="@id/journalWritingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/moodTrackerFragment"
         android:name="com.example.selfly.MoodTrackerFragment"
         android:label="fragment_mood_tracker"
         tools:layout="@layout/fragment_mood_tracker" />
+    <fragment
+        android:id="@+id/journalWritingFragment"
+        android:name="com.example.selfly.JournalWritingFragment"
+        android:label="fragment_journal_writing"
+        tools:layout="@layout/fragment_journal_writing" />
 </navigation>

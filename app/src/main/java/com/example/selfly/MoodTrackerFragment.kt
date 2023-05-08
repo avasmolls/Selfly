@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.example.selfly.databinding.FragmentMoodTrackerBinding
 
 class MoodTrackerFragment : Fragment() {
@@ -19,6 +21,8 @@ class MoodTrackerFragment : Fragment() {
         _binding = FragmentMoodTrackerBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+
+
         val tempMoods = listOf(Mood("happy", R.drawable.ic_baseline_sentiment_satisfied_alt_24, 3, 4, 2023),
         Mood("sad", R.drawable.ic_baseline_sentiment_dissatisfied_24, 4, 5, 2023),
         Mood("very happy",R.drawable.ic_baseline_tag_faces_24, 5, 2, 2023),
@@ -29,5 +33,4 @@ class MoodTrackerFragment : Fragment() {
 
         return rootView
     }
-
 }

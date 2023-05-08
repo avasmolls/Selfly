@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentChooseJournalBinding
 import com.example.selfly.databinding.FragmentChooseTipBinding
 
@@ -27,6 +28,11 @@ class ChooseJournalFragment : Fragment() {
 
         val myAdapter = EntryAdapter(tempEntries)
         binding.recyclerView.adapter = myAdapter
+
+        binding.imageButton2.setOnClickListener {
+            rootView.findNavController()
+                .navigate(R.id.action_chooseJournalFragment_to_journalWritingFragment)
+        }
 
         return rootView
     }
