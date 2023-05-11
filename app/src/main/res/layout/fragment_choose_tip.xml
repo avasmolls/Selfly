@@ -67,44 +67,44 @@
         app:layout_constraintTop_toBottomOf="@+id/tips_title_screen" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/anxiety"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/green_light_extra"
         android:text="anxiety"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintBottom_toTopOf="@+id/sleep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/sleep"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="sleep"
         android:textSize="20dp"
         android:backgroundTint="@color/green_light_2"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/selflove"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/anxiety" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/selflove"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="self love"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/selfcare"
         android:backgroundTint="@color/green_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/sleep" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/selfcare"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="self care"
@@ -113,6 +113,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/selflove" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

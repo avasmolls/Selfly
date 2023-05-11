@@ -20,6 +20,10 @@ class JournalWritingFragment : Fragment() {
         _binding = FragmentJournalWritingBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+        val args = JournalWritingFragmentArgs.fromBundle(requireArguments())
+        binding.editTextTitle.setText(args.titleArg)
+        binding.editTextEntry.setText(args.entryArg)
+
         return rootView
     }
 }

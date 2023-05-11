@@ -27,7 +27,32 @@
         android:id="@+id/chooseTipFragment"
         android:name="com.example.selfly.ChooseTipFragment"
         android:label="fragment_choose_tip"
-        tools:layout="@layout/fragment_choose_tip" />
+        tools:layout="@layout/fragment_choose_tip" >
+        <action
+            android:id="@+id/action_chooseTipFragment_to_sleepTipsFragment"
+            app:destination="@id/sleepTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_selfLoveTipsFragment"
+            app:destination="@id/selfLoveTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_selfLoveTipsFragment2"
+            app:destination="@id/selfLoveTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_anxietyTipsFragment"
+            app:destination="@id/anxietyTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_sleepTipsFragment2"
+            app:destination="@id/sleepTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_selfLoveTipsFragment3"
+            app:destination="@id/selfLoveTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_sleepTipsFragment3"
+            app:destination="@id/sleepTipsFragment" />
+        <action
+            android:id="@+id/action_chooseTipFragment_to_selfCareTipsFragment"
+            app:destination="@id/selfCareTipsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calmingDownFragment"
         android:name="com.example.selfly.CalmingDownFragment"
@@ -59,4 +84,24 @@
             android:name="entryArg"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/anxietyTipsFragment"
+        android:name="com.example.selfly.AnxietyTipsFragment"
+        android:label="fragment_anxiety_tips"
+        tools:layout="@layout/fragment_anxiety_tips" />
+    <fragment
+        android:id="@+id/selfCareTipsFragment"
+        android:name="com.example.selfly.SelfCareTipsFragment"
+        android:label="fragment_self_care_tips"
+        tools:layout="@layout/fragment_self_care_tips" />
+    <fragment
+        android:id="@+id/selfLoveTipsFragment"
+        android:name="com.example.selfly.SelfLoveTipsFragment"
+        android:label="fragment_self_love_tips"
+        tools:layout="@layout/fragment_self_love_tips" />
+    <fragment
+        android:id="@+id/sleepTipsFragment"
+        android:name="com.example.selfly.SleepTipsFragment"
+        android:label="fragment_sleep_tips"
+        tools:layout="@layout/fragment_sleep_tips" />
 </navigation>
