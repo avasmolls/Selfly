@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Selfly</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="mood_array">
+        <item>very happy</item>
+        <item>happy</item>
+        <item>calm</item>
+        <item>sad</item>
+        <item>very sad</item>
+    </string-array>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

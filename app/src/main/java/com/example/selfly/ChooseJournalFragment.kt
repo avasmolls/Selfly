@@ -30,11 +30,10 @@ class ChooseJournalFragment : Fragment() {
         binding.recyclerView.adapter = myAdapter
 
         binding.imageButton2.setOnClickListener {
-            rootView.findNavController()
-                .navigate(R.id.action_chooseJournalFragment_to_journalWritingFragment)
+            val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment("", "")
+            rootView.findNavController().navigate(action)
         }
 
         return rootView
     }
-
 }

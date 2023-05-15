@@ -11,5 +11,6 @@ class MoodViewHolder(val binding: ListItemLayoutMoodsBinding) : RecyclerView.Vie
         currentMood = mood
         binding.textViewMood.text = currentMood.mood
         binding.imageViewMood.setImageResource(currentMood.resourceID)
+        binding.moodDate.text = currentMood.month.toString() + "/" + currentMood.day.toString() + "/" + currentMood.year.toString()
     }
 }
