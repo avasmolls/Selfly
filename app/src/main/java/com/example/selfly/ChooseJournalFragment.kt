@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentChooseJournalBinding
 import com.example.selfly.databinding.FragmentChooseTipBinding
@@ -21,7 +22,7 @@ class ChooseJournalFragment : Fragment() {
         _binding = FragmentChooseJournalBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
-        val tempEntries = listOf(Entry("temp one", 3, 28, 2023, "this is an entry"),
+        val tempEntries : MutableList<Entry> = mutableListOf(Entry("temp one", 3, 28, 2023, "this is an entry"),
             Entry("temp two", 4, 4, 2023, "this is an entry"),
             Entry("temp three", 4, 16, 2023, "this is an entry"),
             Entry("temp four", 4, 21, 2023, "this is an entry"))
@@ -32,6 +33,11 @@ class ChooseJournalFragment : Fragment() {
         binding.imageButton2.setOnClickListener {
             val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment("", "")
             rootView.findNavController().navigate(action)
+        }
+
+        setFragmentResultListener("REQUESTING_JOURNAL_KEY") { requestKey : String, bundle: Bundle ->
+            val currEntry = bundle.getBundle("JOURNAL_KEY")
+            tempEntries.toMutableList().add(currEntry)
         }
 
         return rootView
