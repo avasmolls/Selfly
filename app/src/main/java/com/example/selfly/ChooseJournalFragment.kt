@@ -36,10 +36,15 @@ class ChooseJournalFragment : Fragment() {
         }
 
         setFragmentResultListener("REQUESTING_JOURNAL_KEY") { requestKey : String, bundle: Bundle ->
-            val currEntry = bundle.getBundle("JOURNAL_KEY")
-            tempEntries.toMutableList().add(currEntry)
+            val result = bundle.getBundle("JOURNAL_KEY")
         }
 
         return rootView
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }
