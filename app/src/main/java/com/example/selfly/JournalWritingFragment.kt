@@ -12,6 +12,8 @@ import com.example.selfly.databinding.FragmentJournalWritingBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class JournalWritingFragment : Fragment() {
@@ -28,6 +30,8 @@ class JournalWritingFragment : Fragment() {
         _binding = FragmentJournalWritingBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+        dbRef = Firebase.database.reference
+
         val args = JournalWritingFragmentArgs.fromBundle(requireArguments())
         binding.editTextTitle.setText(args.titleArg)
         binding.editTextEntry.setText(args.entryArg)
@@ -35,12 +39,12 @@ class JournalWritingFragment : Fragment() {
         binding.enterButton.setOnClickListener {
             val title = binding.editTextTitle.text.toString()
             val entry  = binding.editTextEntry.text.toString()
-            val newEntry = Entry(title, 1, 1, 1, entry)
+            val date = getCurrentDateTime().toString("yyyy/MM/dd HH:mm:ss")
+            val newEntry = Entry(title, date, entry)
+            dbRef.child("entries").push().setValue(newEntry)
             setFragmentResult("REQUESTING_JOURNAL_KEY", bundleOf("JOURNAL_KEY" to newEntry))
             rootView.findNavController().navigateUp()
         }
-
-        dbRef = Firebase.database.reference
 
         return rootView
     }
@@ -48,5 +52,14 @@ class JournalWritingFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+        val formatter = SimpleDateFormat(format, locale)
+        return formatter.format(this)
+    }
+
+    fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
     }
 }

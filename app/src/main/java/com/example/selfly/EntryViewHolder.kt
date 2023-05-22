@@ -19,6 +19,6 @@ class EntryViewHolder(val binding: ListItemLayoutJournalBinding) : RecyclerView.
         currentEntry = entry
         binding.titleOfEntry.text = currentEntry.title
         binding.textView.text = currentEntry.entryText
-        binding.dateTextView.text = currentEntry.month.toString() + "/" + currentEntry.day.toString() + "/" + currentEntry.year.toString()
+        binding.dateTextView.text = currentEntry.date
     }
 }
