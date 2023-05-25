@@ -40,10 +40,10 @@ class JournalWritingFragment : Fragment() {
             val title = binding.editTextTitle.text.toString()
             val entry  = binding.editTextEntry.text.toString()
             val date = getCurrentDateTime().toString("yyyy/MM/dd HH:mm:ss")
-            val newEntry = Entry(title, date, entry)
+            val newEntry = Entry(title, entry, date)
             dbRef.child("entries").push().setValue(newEntry)
-            setFragmentResult("REQUESTING_JOURNAL_KEY", bundleOf("JOURNAL_KEY" to newEntry))
-            rootView.findNavController().navigateUp()
+           // setFragmentResult("REQUESTING_JOURNAL_KEY", bundleOf("JOURNAL_KEY" to newEntry))
+           // rootView.findNavController().navigateUp()
         }
 
         return rootView

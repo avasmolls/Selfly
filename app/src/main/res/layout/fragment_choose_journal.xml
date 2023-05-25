@@ -7,6 +7,17 @@
     android:background="@drawable/background"
     android:padding="10dp">
 
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/green_light"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/journal_frag_title2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_delete_24" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
