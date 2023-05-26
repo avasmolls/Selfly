@@ -56,14 +56,14 @@ class ChooseJournalFragment : Fragment() {
                 //ACCESS OBJECT WITH ALL ENTRIES WITHIN THE DATABASE
                 val allDBEntries = dataSnapshot.children
 
-                var numOfTeachersAdded = 0
+                var numOfEntriesAdded = 0
                 // ACCESS EACH VALUE IN DB, AND ADD TO ARRAYLIST
-                for (allTeacherEntries in allDBEntries) {
-                    for (singleTeacherEntry in allTeacherEntries.children) {
-                        numOfTeachersAdded++
-                        val title = singleTeacherEntry.child("title").getValue().toString()
-                        val entryText = singleTeacherEntry.child("entryText").getValue().toString()
-                        val date = singleTeacherEntry.child("date").getValue().toString()
+                for (allEntryEntries in allDBEntries) {
+                    for (singleEntryEntry in allEntryEntries.children) {
+                        numOfEntriesAdded++
+                        val title = singleEntryEntry.child("title").getValue().toString()
+                        val entryText = singleEntryEntry.child("entryText").getValue().toString()
+                        val date = singleEntryEntry.child("date").getValue().toString()
                         val currentEntry = Entry(title, entryText, date)
                         entries.add(currentEntry)
 

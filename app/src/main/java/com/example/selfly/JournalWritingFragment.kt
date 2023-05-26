@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.setFragmentResult
-import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentJournalWritingBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
