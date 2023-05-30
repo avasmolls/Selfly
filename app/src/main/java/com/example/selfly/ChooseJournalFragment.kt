@@ -35,11 +35,13 @@ class ChooseJournalFragment : Fragment() {
 
         var entries = mutableListOf<Entry>()
 
-        val myAdapter = EntryAdapter(entries)
-        binding.recyclerView.adapter = myAdapter
 
         binding.imageButton2.setOnClickListener {
-            val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment("", "")
+            val action =
+                ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment(
+                    "",
+                    ""
+                )
             rootView.findNavController().navigate(action)
         }
 
@@ -47,30 +49,29 @@ class ChooseJournalFragment : Fragment() {
             dbRef.child("entries").removeValue()
         }
 
-       // setFragmentResultListener("REQUESTING_JOURNAL_KEY") { requestkey : String, bundle: Bundle ->
-         //   val result = bundle.getBundle("JOURNAL_KEY")
-       // }
+        // setFragmentResultListener("REQUESTING_JOURNAL_KEY") { requestkey : String, bundle: Bundle ->
+        //   val result = bundle.getBundle("JOURNAL_KEY")
+        // }
 
-        dbRef.addValueEventListener(object : ValueEventListener {
+        dbRef.child("entries").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 //ACCESS OBJECT WITH ALL ENTRIES WITHIN THE DATABASE
                 val allDBEntries = dataSnapshot.children
 
                 var numOfEntriesAdded = 0
                 // ACCESS EACH VALUE IN DB, AND ADD TO ARRAYLIST
-                for (allEntryEntries in allDBEntries) {
-                    for (singleEntryEntry in allEntryEntries.children) {
-                        numOfEntriesAdded++
-                        val title = singleEntryEntry.child("title").getValue().toString()
-                        val entryText = singleEntryEntry.child("entryText").getValue().toString()
-                        val date = singleEntryEntry.child("date").getValue().toString()
-                        val currentEntry = Entry(title, entryText, date)
-                        entries.add(currentEntry)
+                for (singleEntryEntry in allDBEntries) {
+                    numOfEntriesAdded++
+                    val title = singleEntryEntry.child("title").getValue().toString()
+                    val entryText = singleEntryEntry.child("entryText").getValue().toString()
+                    val date = singleEntryEntry.child("date").getValue().toString()
+                    val currentEntry = Entry(title, entryText, date)
+                    entries.add(currentEntry)
+                    //Update recyclerview now that teacherList has data in it
 
-                        //Update recyclerview now that teacherList has data in it
-                        myAdapter.notifyDataSetChanged()
-                    }
                 }
+                val myAdapter = EntryAdapter(entries)
+                binding.recyclerView.adapter = myAdapter
             }
 
             override fun onCancelled(error: DatabaseError) {

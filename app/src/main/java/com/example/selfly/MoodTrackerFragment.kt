@@ -22,7 +22,7 @@ class MoodTrackerFragment : Fragment() {
     private var _binding: FragmentMoodTrackerBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var dbRef : DatabaseReference
+    lateinit var dbRef: DatabaseReference
 
     // properties
     lateinit var currentMood: String
@@ -38,30 +38,21 @@ class MoodTrackerFragment : Fragment() {
 
         setUpSpinner()
 
-        val moods = mutableListOf<Mood>()
+        var moods = mutableListOf<Mood>()
 
-        val myAdapter = MoodAdapter(moods)
-        binding.recyclerViewMood.adapter = myAdapter
 
         binding.enter.setOnClickListener {
             val mood = currentMood
-            var resourceID : Int = 0
-            if(mood.equals("very happy")) {
+            var resourceID: Int = 0
+            if (mood.equals("very happy")) {
                 resourceID = R.drawable.ic_baseline_tag_faces_24
-            }
-            else if(mood.equals("happy")) {
+            } else if (mood.equals("happy")) {
                 resourceID = R.drawable.ic_baseline_sentiment_satisfied_alt_24
-            }
-
-            else if(mood.equals("calm")) {
+            } else if (mood.equals("calm")) {
                 resourceID = R.drawable.ic_baseline_sentiment_satisfied_24
-            }
-
-            else if(mood.equals("sad")) {
+            } else if (mood.equals("sad")) {
                 resourceID = R.drawable.ic_baseline_sentiment_dissatisfied_24
-            }
-
-            else {
+            } else {
                 resourceID = R.drawable.ic_baseline_sentiment_very_dissatisfied_24
             }
 
@@ -70,26 +61,28 @@ class MoodTrackerFragment : Fragment() {
             dbRef.child("moods").push().setValue(newMood)
         }
 
-        dbRef.addValueEventListener(object : ValueEventListener {
+        dbRef.child("moods").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 //ACCESS OBJECT WITH ALL ENTRIES WITHIN THE DATABASE
+                moods = mutableListOf<Mood>()
                 val allDBEntries = dataSnapshot.children
 
                 var numOfMoodsAdded = 0
                 // ACCESS EACH VALUE IN DB, AND ADD TO ARRAYLIST
-                for (allMoodEntries in allDBEntries) {
-                    for (singleMoodEntry in allMoodEntries.children) {
-                        numOfMoodsAdded++
-                        val mood = singleMoodEntry.child("mood").getValue().toString()
-                        val resourceID = singleMoodEntry.child("resourceID").getValue().toString().toInt()
-                        val date = singleMoodEntry.child("date").getValue().toString()
-                        val currentMood = Mood(mood, resourceID, date)
-                        moods.add(currentMood)
+                for (singleMoodEntry in allDBEntries) {
+                    numOfMoodsAdded++
+                    val mood = singleMoodEntry.child("mood").getValue().toString()
+                    val resourceID =
+                        singleMoodEntry.child("resourceID").getValue().toString().toInt()
+                    val date = singleMoodEntry.child("date").getValue().toString()
+                    val currentMood = Mood(mood, resourceID, date)
+                    moods.add(currentMood)
 
-                        //Update recyclerview now that teacherList has data in it
-                        myAdapter.notifyDataSetChanged()
-                    }
+                    //Update recyclerview now that teacherList has data in it
+
                 }
+                val myAdapter = MoodAdapter(moods)
+                binding.recyclerViewMood.adapter = myAdapter
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -100,11 +93,16 @@ class MoodTrackerFragment : Fragment() {
 
         return rootView
     }
+
     fun setUpSpinner() {
-        val guestsArrayAdapter = ArrayAdapter.createFromResource(requireActivity(), R.array.mood_array, android.R.layout.simple_spinner_item)
+        val guestsArrayAdapter = ArrayAdapter.createFromResource(
+            requireActivity(),
+            R.array.mood_array,
+            android.R.layout.simple_spinner_item
+        )
         guestsArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinner.adapter = guestsArrayAdapter
-        binding.spinner.onItemSelectedListener = object  : AdapterView.OnItemSelectedListener {
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>, p1: View?, p2: Int, p3: Long) {
                 currentMood = p0.getItemAtPosition(p2).toString()
             }
