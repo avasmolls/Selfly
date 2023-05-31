@@ -10,7 +10,7 @@ class EntryViewHolder(val binding: ListItemLayoutJournalBinding) : RecyclerView.
 
     init {
         binding.root.setOnClickListener { view ->
-            val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment(currentEntry.title, currentEntry.entryText)
+            val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment()
             view.findNavController().navigate(action)
         }
     }

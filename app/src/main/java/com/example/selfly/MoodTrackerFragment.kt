@@ -24,7 +24,6 @@ class MoodTrackerFragment : Fragment() {
 
     lateinit var dbRef: DatabaseReference
 
-    // properties
     lateinit var currentMood: String
 
     override fun onCreateView(
@@ -63,12 +62,10 @@ class MoodTrackerFragment : Fragment() {
 
         dbRef.child("moods").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                //ACCESS OBJECT WITH ALL ENTRIES WITHIN THE DATABASE
-                moods = mutableListOf<Mood>()
+                moods = mutableListOf()
                 val allDBEntries = dataSnapshot.children
 
                 var numOfMoodsAdded = 0
-                // ACCESS EACH VALUE IN DB, AND ADD TO ARRAYLIST
                 for (singleMoodEntry in allDBEntries) {
                     numOfMoodsAdded++
                     val mood = singleMoodEntry.child("mood").getValue().toString()
@@ -77,16 +74,12 @@ class MoodTrackerFragment : Fragment() {
                     val date = singleMoodEntry.child("date").getValue().toString()
                     val currentMood = Mood(mood, resourceID, date)
                     moods.add(currentMood)
-
-                    //Update recyclerview now that teacherList has data in it
-
                 }
                 val myAdapter = MoodAdapter(moods)
                 binding.recyclerViewMood.adapter = myAdapter
             }
 
             override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
                 Log.w("MainFragment", "Failed to read value.", error.toException())
             }
         })

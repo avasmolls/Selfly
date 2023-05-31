@@ -35,13 +35,12 @@ class ChooseJournalFragment : Fragment() {
 
         var entries = mutableListOf<Entry>()
 
+        val myAdapter = EntryAdapter(entries)
+        binding.recyclerView.adapter = myAdapter
 
         binding.imageButton2.setOnClickListener {
             val action =
-                ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment(
-                    "",
-                    ""
-                )
+                ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment()
             rootView.findNavController().navigate(action)
         }
 
@@ -70,8 +69,7 @@ class ChooseJournalFragment : Fragment() {
                     //Update recyclerview now that teacherList has data in it
 
                 }
-                val myAdapter = EntryAdapter(entries)
-                binding.recyclerView.adapter = myAdapter
+                myAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {

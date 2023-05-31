@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Selfly</string>
+    <string name="dialogue_title">Are You Sure?</string>
+    <string name="dialogue_text">Once you enter this entry you will be able to view it, however, you will not be able to edit it unless you create a new entry. Are you sure you are done?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
     <string-array name="mood_array">
         <item>very happy</item>
         <item>happy</item>

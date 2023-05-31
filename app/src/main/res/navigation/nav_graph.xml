@@ -77,12 +77,9 @@
         android:name="com.example.selfly.JournalWritingFragment"
         android:label="fragment_journal_writing"
         tools:layout="@layout/fragment_journal_writing" >
-        <argument
-            android:name="titleArg"
-            app:argType="string" />
-        <argument
-            android:name="entryArg"
-            app:argType="string" />
+        <action
+            android:id="@+id/action_journalWritingFragment_to_chooseJournalFragment"
+            app:destination="@id/chooseJournalFragment" />
     </fragment>
     <fragment
         android:id="@+id/anxietyTipsFragment"
