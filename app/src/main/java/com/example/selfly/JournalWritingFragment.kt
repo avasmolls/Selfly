@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentJournalWritingBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -31,20 +32,44 @@ class JournalWritingFragment : Fragment() {
 
         dbRef = Firebase.database.reference
 
+        binding.backButton5.setOnClickListener {
+            rootView.findNavController().navigateUp()
+        }
+
         binding.enterButton.setOnClickListener {
-            MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
-                .setTitle(getString(R.string.dialogue_title))
-                .setMessage(getString(R.string.dialogue_text))
-                .setPositiveButton(getString(R.string.yes)) { dialog, which ->
-                    val title = binding.editTextTitle.text.toString()
-                    val entry  = binding.editTextEntry.text.toString()
-                    val date = getCurrentDateTime().toString("yyyy/MM/dd HH:mm:ss")
-                    val newEntry = Entry(title, entry, date)
-                    dbRef.child("entries").push().setValue(newEntry)
-                    val action = JournalWritingFragmentDirections.actionJournalWritingFragmentToChooseJournalFragment()
-                    rootView.findNavController().navigate(action)
-                }
-                .show()
+            if (binding.editTextEntry==null) {
+                Toast.makeText(
+                    getActivity(),
+                    "You must have text in your entry!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            if (binding.editTextTitle==null) {
+                Toast.makeText(
+                    getActivity(),
+                    "You must have text in your title!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            else {
+                MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+                    .setTitle(getString(R.string.dialogue_title))
+                    .setMessage(getString(R.string.dialogue_text))
+                    .setPositiveButton(getString(R.string.yes)) { dialog, which ->
+                        val title = binding.editTextTitle.text.toString()
+                        val entry = binding.editTextEntry.text.toString()
+                        val date = getCurrentDateTime().toString("yyyy/MM/dd")
+                        val newEntry = Entry(title, entry, date)
+                        dbRef.child("entries").push().setValue(newEntry)
+                        val action =
+                            JournalWritingFragmentDirections.actionJournalWritingFragmentToChooseJournalFragment()
+                        rootView.findNavController().navigate(action)
+                    }
+                    .setNegativeButton(getString(R.string.no)) { dialog, which ->
+
+                    }
+                    .show()
+            }
         }
 
         return rootView

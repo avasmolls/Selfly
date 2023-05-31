@@ -8,17 +8,16 @@
     android:padding="10dp"
     tools:context=".JournalWritingFragment">
 
-    <EditText
-        android:id="@+id/editTextTitle"
+    <TextView
+        android:id="@+id/text_view_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:gravity="center"
-        android:hint="Enter Title"
-        android:inputType="textPersonName"
         android:textColor="@color/green_dark"
         android:textSize="20dp"
+        android:text="Holder"
         android:textStyle="italic"
         app:fontFamily="@font/cherry_cream_soda"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,48 +29,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="°。write it out 。°"
+        android:text="°。here is what you wrote 。°"
+        android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:textColor="@color/white"
         app:fontFamily="@font/cherry_cream_soda"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/text_view_title" />
 
-    <EditText
-        android:id="@+id/editTextEntry"
+    <TextView
+        android:id="@+id/text_view_entry"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@color/green_medium"
         android:ems="10"
         android:gravity="left"
+        android:padding="8dp"
+        android:text="Holder"
+        android:textColor="@color/green_dark"
         android:textSize="15dp"
         android:textStyle="bold"
-        android:textColor="@color/green_dark"
         app:fontFamily="@font/cherry_cream_soda"
-        android:hint="type here..."
-        android:inputType="textMultiLine"
-        android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/enter_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/here_is_what" />
-
-    <Button
-        android:id="@+id/enter_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/here_is_what"
+        tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/backButton5"
+        android:id="@+id/backButton9"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="5dp"
@@ -81,4 +69,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:backgroundTint="@color/green_light"
         tools:ignore="UseAppTint" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

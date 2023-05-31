@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentMoodTrackerBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -16,6 +18,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
+import java.util.*
 
 class MoodTrackerFragment : Fragment() {
 
@@ -25,6 +28,12 @@ class MoodTrackerFragment : Fragment() {
     lateinit var dbRef: DatabaseReference
 
     lateinit var currentMood: String
+
+    var veryHappy = 0
+    var happy = 0
+    var calm = 0
+    var sad = 0
+    var verySad = 0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,27 +46,36 @@ class MoodTrackerFragment : Fragment() {
 
         setUpSpinner()
 
-        var moods = mutableListOf<Mood>()
+        binding.backButton6.setOnClickListener {
+            rootView.findNavController().navigateUp()
+        }
 
+        var moods = mutableListOf<Mood>()
 
         binding.enter.setOnClickListener {
             val mood = currentMood
             var resourceID: Int = 0
             if (mood.equals("very happy")) {
                 resourceID = R.drawable.ic_baseline_tag_faces_24
+                veryHappy++
             } else if (mood.equals("happy")) {
                 resourceID = R.drawable.ic_baseline_sentiment_satisfied_alt_24
+                happy++
             } else if (mood.equals("calm")) {
                 resourceID = R.drawable.ic_baseline_sentiment_satisfied_24
+                calm++
             } else if (mood.equals("sad")) {
                 resourceID = R.drawable.ic_baseline_sentiment_dissatisfied_24
+                sad++
             } else {
                 resourceID = R.drawable.ic_baseline_sentiment_very_dissatisfied_24
+                verySad++
             }
 
             val newMood = Mood(mood, resourceID)
 
             dbRef.child("moods").push().setValue(newMood)
+            checkMostCommonMood()
         }
 
         dbRef.child("moods").addValueEventListener(object : ValueEventListener {
@@ -71,7 +89,7 @@ class MoodTrackerFragment : Fragment() {
                     val mood = singleMoodEntry.child("mood").getValue().toString()
                     val resourceID =
                         singleMoodEntry.child("resourceID").getValue().toString().toInt()
-                    val date = singleMoodEntry.child("date").getValue().toString()
+                    val date = getCurrentDateTime().toString("yyyy/MM/dd")
                     val currentMood = Mood(mood, resourceID, date)
                     moods.add(currentMood)
                 }
@@ -109,5 +127,35 @@ class MoodTrackerFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun checkMostCommonMood() {
+        if(veryHappy == happy && happy == calm && calm == sad && sad == verySad) {
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_24)
+        }
+        else if(veryHappy > happy && veryHappy > calm && veryHappy > sad && veryHappy > verySad) {
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_tag_faces_24)
+        }
+        else if (happy > veryHappy && happy > calm && happy > sad && happy > verySad ){
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_alt_24)
+        }
+        else if(calm > verySad && calm > sad && calm > happy && calm > veryHappy){
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_24)
+        }
+        else if(sad > veryHappy && sad > happy && sad > calm && sad > verySad){
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_dissatisfied_24)
+        }
+        else if(verySad > sad && verySad > calm && verySad > happy && verySad > veryHappy){
+            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_very_dissatisfied_24)
+        }
+    }
+
+    fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {
+        val formatter = SimpleDateFormat(format, locale)
+        return formatter.format(this)
+    }
+
+    fun getCurrentDateTime(): Date {
+        return Calendar.getInstance().time
     }
 }

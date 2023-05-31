@@ -66,6 +66,12 @@
         <action
             android:id="@+id/action_chooseJournalFragment_to_journalWritingFragment"
             app:destination="@id/journalWritingFragment" />
+        <action
+            android:id="@+id/action_chooseJournalFragment_to_showEntryFragment"
+            app:destination="@id/showEntryFragment" />
+        <action
+            android:id="@+id/action_chooseJournalFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/moodTrackerFragment"
@@ -101,4 +107,15 @@
         android:name="com.example.selfly.SleepTipsFragment"
         android:label="fragment_sleep_tips"
         tools:layout="@layout/fragment_sleep_tips" />
+    <fragment
+        android:id="@+id/showEntryFragment"
+        android:name="com.example.selfly.ShowEntryFragment"
+        android:label="ShowEntryFragment" >
+        <argument
+            android:name="titleArg"
+            app:argType="string" />
+        <argument
+            android:name="entryTextArg"
+            app:argType="string" />
+    </fragment>
 </navigation>

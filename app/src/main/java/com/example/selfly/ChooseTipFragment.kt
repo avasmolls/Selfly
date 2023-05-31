@@ -21,6 +21,10 @@ class ChooseTipFragment : Fragment() {
         _binding = FragmentChooseTipBinding.inflate(inflater, container, false)
         val rootView = binding.root
 
+        binding.backButton4.setOnClickListener {
+            rootView.findNavController().navigateUp()
+        }
+
         binding.anxiety.setOnClickListener {
             rootView.findNavController()
                 .navigate(R.id.action_chooseTipFragment_to_anxietyTipsFragment)

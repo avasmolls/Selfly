@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentCalmingDownBinding
 import com.example.selfly.databinding.FragmentChooseJournalBinding
 
@@ -19,6 +20,15 @@ class CalmingDownFragment : Fragment() {
     ): View? {
         _binding = FragmentCalmingDownBinding.inflate(inflater, container, false)
         val rootView = binding.root
+
+        binding.backButton.setOnClickListener {
+            rootView.findNavController().navigateUp()
+
+        }
+
+        binding.button6.setOnClickListener {
+            rootView.findNavController().navigateUp()
+        }
 
         binding.circle.setOnClickListener {
 

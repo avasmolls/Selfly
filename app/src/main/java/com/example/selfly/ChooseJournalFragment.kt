@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.findNavController
 import com.example.selfly.databinding.FragmentChooseJournalBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -38,6 +39,10 @@ class ChooseJournalFragment : Fragment() {
         val myAdapter = EntryAdapter(entries)
         binding.recyclerView.adapter = myAdapter
 
+        binding.backButton3.setOnClickListener {
+            rootView.findNavController().navigateUp()
+        }
+
         binding.imageButton2.setOnClickListener {
             val action =
                 ChooseJournalFragmentDirections.actionChooseJournalFragmentToJournalWritingFragment()
@@ -45,12 +50,21 @@ class ChooseJournalFragment : Fragment() {
         }
 
         binding.delete.setOnClickListener {
-            dbRef.child("entries").removeValue()
+            MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+                .setTitle(getString(R.string.dialogue_title))
+                .setMessage(getString(R.string.delete_all))
+                .setPositiveButton(getString(R.string.yes)) { dialog, which ->
+                    dbRef.child("entries").removeValue()
+                    val action = ChooseJournalFragmentDirections.actionChooseJournalFragmentToMainFragment()
+                    rootView.findNavController().navigate(action)
+                }
+                .setNegativeButton(getString(R.string.no)) { dialog, which ->
+
+                }
+                .show()
+
         }
 
-        // setFragmentResultListener("REQUESTING_JOURNAL_KEY") { requestkey : String, bundle: Bundle ->
-        //   val result = bundle.getBundle("JOURNAL_KEY")
-        // }
 
         dbRef.child("entries").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
