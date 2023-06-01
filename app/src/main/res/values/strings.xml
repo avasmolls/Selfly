@@ -4,6 +4,7 @@
     <string name="dialogue_text">Once you enter this entry you will be able to view it, however, you will not be able to edit it unless you create a new entry. Are you sure you are done?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="calm_done">This will send you back to the home screen, are you sure?</string>
     <string name="delete_all">This will delete all past entries and send you back to home screen. Are you sure you want to delete all past entries?</string>
     <string-array name="mood_array">
         <item>very happy</item>

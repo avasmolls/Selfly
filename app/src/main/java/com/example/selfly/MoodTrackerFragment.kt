@@ -75,7 +75,6 @@ class MoodTrackerFragment : Fragment() {
             val newMood = Mood(mood, resourceID)
 
             dbRef.child("moods").push().setValue(newMood)
-            checkMostCommonMood()
         }
 
         dbRef.child("moods").addValueEventListener(object : ValueEventListener {
@@ -127,27 +126,6 @@ class MoodTrackerFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    fun checkMostCommonMood() {
-        if(veryHappy == happy && happy == calm && calm == sad && sad == verySad) {
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_24)
-        }
-        else if(veryHappy > happy && veryHappy > calm && veryHappy > sad && veryHappy > verySad) {
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_tag_faces_24)
-        }
-        else if (happy > veryHappy && happy > calm && happy > sad && happy > verySad ){
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_alt_24)
-        }
-        else if(calm > verySad && calm > sad && calm > happy && calm > veryHappy){
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_satisfied_24)
-        }
-        else if(sad > veryHappy && sad > happy && sad > calm && sad > verySad){
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_dissatisfied_24)
-        }
-        else if(verySad > sad && verySad > calm && verySad > happy && verySad > veryHappy){
-            binding.mostCommon.setImageResource(R.drawable.ic_baseline_sentiment_very_dissatisfied_24)
-        }
     }
 
     fun Date.toString(format: String, locale: Locale = Locale.getDefault()): String {

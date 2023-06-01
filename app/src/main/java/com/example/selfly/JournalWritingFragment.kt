@@ -37,21 +37,6 @@ class JournalWritingFragment : Fragment() {
         }
 
         binding.enterButton.setOnClickListener {
-            if (binding.editTextEntry==null) {
-                Toast.makeText(
-                    getActivity(),
-                    "You must have text in your entry!",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            if (binding.editTextTitle==null) {
-                Toast.makeText(
-                    getActivity(),
-                    "You must have text in your title!",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            else {
                 MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
                     .setTitle(getString(R.string.dialogue_title))
                     .setMessage(getString(R.string.dialogue_text))
@@ -69,7 +54,6 @@ class JournalWritingFragment : Fragment() {
 
                     }
                     .show()
-            }
         }
 
         return rootView
