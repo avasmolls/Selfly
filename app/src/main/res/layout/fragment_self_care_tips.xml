@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AnxietyTipsFragment"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:padding="8dp"
+    tools:context=".AnxietyTipsFragment">
 
     <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
+        android:id="@+id/care_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="self care"
-        tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="308dp" />
+        android:gravity="center"
+        android:text="SELF CARE TIPS"
+        android:textColor="@color/green_dark"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:fontFamily="@font/cherry_cream_soda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/backButton7"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_margin="5dp"
-        android:tint="@color/white"
+        android:backgroundTint="@color/green_light"
         android:src="@drawable/ic_baseline_arrow_back_24"
+        android:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/green_light"
         tools:ignore="UseAppTint" />
 </androidx.constraintlayout.widget.ConstraintLayout>

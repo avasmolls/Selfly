@@ -5,15 +5,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AnxietyTipsFragment"
+    android:padding="8dp"
     android:background="@drawable/background">
 
     <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
+        android:id="@+id/love_title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="self love"
-        tools:layout_editor_absoluteX="182dp"
-        tools:layout_editor_absoluteY="345dp" />
+        android:text="SELF LOVE TIPS"
+        android:textColor="@color/green_dark"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:fontFamily="@font/cherry_cream_soda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/backButton8"
