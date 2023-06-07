@@ -33,6 +33,7 @@ class ChooseJournalFragment : Fragment() {
         val rootView = binding.root
 
         dbRef = Firebase.database.reference
+        setHasOptionsMenu(true)
 
         var entries = mutableListOf<Entry>()
 
@@ -68,11 +69,9 @@ class ChooseJournalFragment : Fragment() {
 
         dbRef.child("entries").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                //ACCESS OBJECT WITH ALL ENTRIES WITHIN THE DATABASE
                 val allDBEntries = dataSnapshot.children
 
                 var numOfEntriesAdded = 0
-                // ACCESS EACH VALUE IN DB, AND ADD TO ARRAYLIST
                 for (singleEntryEntry in allDBEntries) {
                     numOfEntriesAdded++
                     val title = singleEntryEntry.child("title").getValue().toString()
@@ -80,7 +79,6 @@ class ChooseJournalFragment : Fragment() {
                     val date = singleEntryEntry.child("date").getValue().toString()
                     val currentEntry = Entry(title, entryText, date)
                     entries.add(currentEntry)
-                    //Update recyclerview now that teacherList has data in it
 
                 }
                 myAdapter.notifyDataSetChanged()

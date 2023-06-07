@@ -2,13 +2,12 @@ package com.example.selfly
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.selfly.databinding.FragmentMoodTrackerBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.database.DataSnapshot
@@ -45,6 +44,7 @@ class MoodTrackerFragment : Fragment() {
         dbRef = Firebase.database.reference
 
         setUpSpinner()
+        setHasOptionsMenu(true)
 
         binding.backButton6.setOnClickListener {
             rootView.findNavController().navigateUp()
@@ -135,5 +135,16 @@ class MoodTrackerFragment : Fragment() {
 
     fun getCurrentDateTime(): Date {
         return Calendar.getInstance().time
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.
+        onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 }

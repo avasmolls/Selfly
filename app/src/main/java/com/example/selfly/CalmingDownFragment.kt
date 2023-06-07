@@ -2,14 +2,13 @@ package com.example.selfly
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.ViewPropertyAnimator
 import android.view.animation.LinearInterpolator
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.selfly.databinding.FragmentCalmingDownBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -18,12 +17,14 @@ class CalmingDownFragment : Fragment() {
     private var _binding: FragmentCalmingDownBinding? = null
     private val binding get() = _binding!!
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentCalmingDownBinding.inflate(inflater, container, false)
         val rootView = binding.root
+        setHasOptionsMenu(true)
 
         val animator : ViewPropertyAnimator = binding.circle.animate()
             .scaleX(
@@ -46,7 +47,8 @@ class CalmingDownFragment : Fragment() {
             )
             .setDuration(5000)
             .setInterpolator(LinearInterpolator())
-            animator.setListener(object: AnimatorListenerAdapter(){
+            animator.setListener(@SuppressLint("SuspiciousIndentation")
+            object: AnimatorListenerAdapter(){
                 override fun onAnimationEnd(animation: Animator) {
                     binding.circle.animate()
                         .scaleX(
@@ -98,6 +100,17 @@ class CalmingDownFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.
+        onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
 }

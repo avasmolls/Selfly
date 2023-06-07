@@ -13,5 +13,160 @@
         <item>sad</item>
         <item>very sad</item>
     </string-array>
+    <string name="tip1">1. Keep physically active\n
+            Develop a routine so that you\'re physically active most days of the week. Exercise is a powerful stress reducer.
+            It can improve your mood and help you stay healthy.</string>
+    Start out slowly, and gradually increase the amount and intensity of your activities.
+    <string name="tip2">2. Avoid alcohol and recreational drugs.\n
+            These substances can cause or worsen anxiety. If you can\'t
+            quit on your own, see your health care provider or find a support group to help you.</string>
+    <string name="tip3">3. Quit smoking, and cut back or quit drinking caffeinated beverages.\n
+        Nicotine and caffeine can worsen anxiety.</string>
+    <string name="tip4">4. Use stress management and relaxation techniques.\n
+        Visualization techniques, meditation and yoga are examples of relaxation techniques that can ease anxiety.</string>
+    <string name="tip5">5. Make sleep a priority.\n
+        Do what you can to make sure you\'re getting enough sleep to feel rested. If you aren\'t sleeping well, talk with your health care provider.</string>
+    <string name="tip6">6. Eat healthy foods.\n
+        A healthy diet that incorporates vegetables, fruits, whole grains and fish may be linked to reduced anxiety, but more research is needed.</string>
+    <string name="tip7">7. Learn about your disorder.\n
+        Talk to your health care provider to find out what might be causing your specific condition and what treatments might be best for you. Involve your family and
+            friends, and ask for their support.</string>
+    <string name="tip8">8. Stick to your treatment plan.\n
+Take medications as directed. Keep therapy appointments and complete any assignments your therapist gives. Consistency can make a big difference, especially when it comes to
+            taking your medication.</string>
+    <string name="tip9">9. Identify triggers.\n
+Learn what situations or actions cause you stress or increase your anxiety. Practice the strategies you developed with your mental health provider so you\'re ready to
+            deal with anxious feelings in these situations.</string>
+    <string name="tip10">10. Keep a journal.\n
+Keeping track of your personal life can help you and your mental health provider identify what\'s causing you stress and what seems to help you feel better.</string>
+    <string name="tip11">11. Socialize.\n
+Don\'t let worries isolate you from loved ones or activities.</string>
+    <string name="care1">1. Physical Self-Care\n
+The mind and body connection is a real phenomenon. When you are caring for your body, you\’ll think and feel better too.
+        Physical self-care includes how you\'re fueling your body, how much sleep
+        you\'re getting, how much physical activity you are doing, and how well you\'re caring for your physical needs.
+        Attending appointments, taking medication as prescribed, and managing your health are all part of good physical self-care.
+        Here are some questions you can ask yourself to assess your physical health:\n
+        Am I getting adequate sleep?\n
+        Is my diet fueling my body well?\n
+        Am I taking charge of my health?\n
+        Am I getting enough exercise?</string>
+    <string name="care2">2. Social Self-Care\n
+        We are not meant to live in total isolation - we all need social connectivity to thrive in life. Although it can be hard to make time for
+        family and friends with our busy schedules, close connections are important for our well-being. Here are some fun ideas to try. If these activities
+        below don’t resonate with you, try something that would.\n
+        Watch a fun movie with friends\n
+        Call a parent\n
+        Have dinner with your special someone\n
+        Family game night\n
+        Volunteer for a cause that is important to you</string>
+    <string name="care3">3. Mental Self-Care\n
+       Did you know that humans have about 6200 thoughts in a single day? Don\’t you think our self-talk will affect how we think and feel about ourselves?
+        It\’s also important to stimulate your mind with mental activities. Here are some mental activities to try:\n
+        Practice self-compassion and acceptance\n
+        Choose positive thoughts more often\n
+        Choose kindness\n
+        Do a puzzle\n
+        Learn something new</string>
+    <string name="care4">4. Spiritual Self-Care\n
+        Nurturing your spirit doesn\’t have to involve religion, though for some it does. It can involve anything that helps you develop a deeper sense of meaning,
+        understanding or connection with the universe. Here are a few examples.\n
+        Meditation\n
+        Yoga\n
+        Going to a place of worship\n
+        Being in nature\n
+        Self-reflection</string>
+    <string name="care5">5. Emotional Self-Care\n
+        It is important to have healthy coping skills to deal with uncomfortable emotions like anger, anxiety, and sadness.
+        Emotional self-care is a process in which we bring our awareness to our emotions and take the steps necessary in order to honor and care for
+        these emotions. Here are some activities that can be helpful for emotional self-care.\n
+        Talk to a friend you can trust\n
+        Journal your feelings\n
+        Meditation\n
+        Gratitude\n
+        Take a break</string>
+    <string name="love1">
+        1. Do Something Kind\n
+        Although it might seem like a slightly selfish motive, being kind and doing something for someone less fortunate than yourself can help you learn to love
+        yourself.
+        There are lots of different ways to do something kind, but one of the best, long-term ways you can do something for someone else is by volunteering.
+        If you fancy giving this a go, pick a volunteer opportunity that suits you and your skill set. For example, you could help out at a local swimming club,
+        befriend an elderly person or use your marketing experience to promote a local charity.
+    </string>
+    <string name="love2">2. Become Your Hero For The Day\n
+        If you have something important coming up that you don\’t feel confident about, such as an interview or a speech you have to deliver, you might find
+        that pretending
+        to be your hero for the day can give you that hit of confidence you need to pull it off.\n
+
+        If you want to try this out for yourself choose someone that you can identify with, but who is also well known for his or her confidence. Then begin to act
+        like them. Although you don\’t have to speak in their accent or use any of their quirky mannerisms, envisioning your hero can have a surprisingly positive
+        impact upon your own body language and tone of voice. </string>
+    <string name="love3">3. Retrain Your Thoughts\n
+
+A great way to alter your behaviour and learn to love yourself is to retrain the way you think. You can do this by following up every negative
+        thought you have about yourself with a positive. For example, if you tell yourself that you are ugly, old or overweight, follow this bad thought up with
+        something positive, like: ‘I have great skin, hair and a good smile’. Increasing the number of positive thoughts you have about yourself during the day
+        will hopefully help you to enjoy being you and will help to boost your self-esteem.</string>
+    <string name="love4">4. Admit Your Flaws And Take Action\n
+We all have flaws and that\’s fine. It is just something that we have to accept. Yet some people\’s flaws can interfere with their life and become an obstacle
+        that stands between them and their happiness. If you have a flaw that is becoming a problem it is time to admit that you need to change.\n
+
+You might have a foul temper, have an issue with food, be cripplingly jealous or be going through a wild phase that has become out of control.
+        Whatever your flaw, remember that you will be unable to love yourself until you address these issues and you will feel a million times better
+        about yourself if you seek some help.</string>
+    <string name="love5">5. Relationship Analysis\n
+There are some people in this life that are just no good for us. If you have friends, boyfriends, girlfriends or colleagues who undermine you,
+        belittle you or are just plain mean, you need to have a think about addressing the issue and confronting them about their behaviour.\n
+
+Remember that no one has the right to put you down and the only way people
+        will stop acting in this way is if they know you won\’t accept it. Be brave, plan what you are going to say so that you can communicate clearly and
+        then sit down and talk through your issue face to face. If the problem continues it might be time to consider cutting them out of your life altogether.\n
+</string>
+    <string name="sleep1">1. Invest in a Better Mattress and Bedding\n
+    2. Block Out Light\n
+    3. Minimize Noise\n
+    4. Set the Thermostat to 65 to 68 Degrees Fahrenheit\n
+    5. Get at Least Seven Hours of Sleep
+    </string>
+    <string name="sleep2">6. Set Your Alarm for the Same Time Each Day\n
+    7. Keep Naps Around 20 Minutes\n
+    8. Relax for 30 Minutes Before Bed\n
+    9. Disconnect Devices in the Hour Before Bed\n
+    10. Get 30 Minutes of Natural Light Exposure
+    </string>
+    <string name="sleep3">11. Exercise for at Least 20 Minutes Each Day\n
+    12. Limit Caffeine After 2 p.m.\n
+    13. Be Mindful of Alcohol in the Hour Before Bedtime\n
+    14. Eat Dinner a Few Hours Before Bed\n
+    15. Limit Nicotine Use and Smoke Exposure
+    </string>
+    <string name="sleep4">16. Reserve Your Bed for Sleep Only\n
+    17. Get Out of Bed After 20 Minutes\n
+    18. Keep a Sleep Diary\n
+    19. Consider Supplements\n
+    20. Talk With a Doctor
+    </string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_the_app">࣪ ִֶָ☾. About The App ࣪ ִֶָ☾.</string>
+    <string name="about">As someone who has always struggled with mental health, I wanted to make an app that would be useful to me and others. I love journaling, but find it annoying to have a physical one. I wanted to make a little pretty app, for my little pretty journaling--that was the main idea when making this. I loved making this app, I hope you love it as much as I do!</string>
+    <string name="anxiety_tips">★⭑ANXIETY TIPS!⭑★</string>
+    <string name="view_website">View Website</string>
+    <string name="click_for_next_tip">★⭑Click For Next Tip!⭑★</string>
+    <string name="and_remember_you_are_loved">And Remember You Are Loved</string>
+    <string name="let_s_slow_it_down">let\'s slow it down...</string>
+    <string name="breathe_in">BREATHE IN...</string>
+    <string name="i_m_done">i\'m done!</string>
+    <string name="new_entry"><![CDATA[new entry ->]]></string>
+    <string name="journal">✦ JOURNAL ✦</string>
+    <string name="tips_tips_tips">TIPS TIPS TIPS</string>
+    <string name="what_do_you_need_a_tip_for">what do you need a tip for?</string>
+    <string name="anxiety">anxiety</string>
+    <string name="sleep">sleep</string>
+    <string name="self_love">self love</string>
+    <string name="self_care">self care</string>
+    <string name="write_it_out">°。write it out 。°</string>
+    <string name="type_here">type here...</string>
+    <string name="enter">enter</string>
+    <string name="enter_title">Enter Title</string>
 </resources>
